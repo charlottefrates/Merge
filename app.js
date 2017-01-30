@@ -88,7 +88,7 @@ function merge(dataSource1,dataSource2){
 
 
 /*
-#3 SEEMED TO WORK
+#3 SEEMED TO WORK but doesnt work on JSBIN
 
 
 var objMerge;
