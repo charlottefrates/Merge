@@ -64,13 +64,6 @@ var dataSource2 = [
     },
   ];
 
-   var objMerge;
-
-   objMerge = JSON.stringify(dataSource1) + JSON.stringify(dataSource2);
-
-
-   console.log(objMerge);
-
 
 /*
 
@@ -86,9 +79,9 @@ for ( var key in dataSource2){ results[key] = dataSource2 [key]};
 
 #2 DOESNT WORK
 function merge(dataSource1,dataSource2){
-     var combinedDataSource = {}
-     for( var source in dataSource1){ combinedDataSource[id] = dataSource1[id]};
-     for( var source in dataSource2){ combinedDataSource[id] = dataSource2[id]};
+     var results = {}
+     for(var source in dataSource1){results[id] = dataSource1[id]};
+     for(var source in dataSource2){results[id] = dataSource2[id]};
 }
 
 
@@ -128,4 +121,29 @@ for (var merge in addition) {
 
 
   console.log (results);
+
+#5 WORKS
+
+var objMerge;
+
+objMerge = JSON.stringify(dataSource1) + JSON.stringify(dataSource2);
+
+
+console.log(objMerge);
+
+
+
+
+#6
 */
+
+var results = [];
+for (var i = 0; i < dataSource1.length; i++) {
+     for (var j = 0; j < dataSource2.length; i++) {
+          if ( dataSource1[i]== dataSource2[j]){
+          results.push(dataSource1[i]);
+     };
+     };
+};
+
+console.log (results);
