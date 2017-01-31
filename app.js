@@ -64,6 +64,13 @@ var dataSource2 = [
     },
   ];
 
+   var objMerge;
+
+   objMerge = JSON.stringify(dataSource1) + JSON.stringify(dataSource2);
+
+
+   console.log(objMerge);
+
 
 /*
 
@@ -73,10 +80,9 @@ var results = {};
 
 for ( var key in dataSource1){ results[key] = dataSource1 [key]};
 for ( var key in dataSource2){ results[key] = dataSource2 [key]};
-*/
 
 
-/*
+
 
 #2 DOESNT WORK
 function merge(dataSource1,dataSource2){
@@ -84,58 +90,42 @@ function merge(dataSource1,dataSource2){
      for( var source in dataSource1){ combinedDataSource[id] = dataSource1[id]};
      for( var source in dataSource2){ combinedDataSource[id] = dataSource2[id]};
 }
-*/
 
 
-/*
-#3 SEEMED TO WORK but doesnt work on JSBIN
+#4 WORKS
 
-
-var objMerge;
-
-objMerge = JSON.stringify(dataSource1) + JSON.stringify(dataSource2);
-
-
-console.log(objMerge);
-
-*/
-
-
-/*
-ANSWER
-*/
 
 var results = {};
 
-/*loop through object 1 */
+//loops through object 1
+
 for (var i=0; i < dataSource1.length; i++) {
       results[dataSource1[i].id] = dataSource1[i];
 }
 
-/*
-loop to find similarities
 
-for...in statement
-===>for (variable in object) {...
-}
+//loops to find similarities
 
-find() method that returns value of first object element
-===> arr.find(callback[, thisArg])
+//for...in statement
+//===>for (variable in object) {...}
+
+//find() method that returns value of first object element
+//===> arr.find(callback[, thisArg])
 
 
- */
 for (var key in results) {
-      var otherData = dataSource2.find(
+      var addition = dataSource2.find(
         function(item) { return item === key; });
 }
-/*
 
-combine each dataSource
-*/
 
-for (var _key in otherData) {
-      results[key] = otherData[key];
+//combines each dataSource
+
+
+for (var merge in addition) {
+      results[key] = addition[key];
 }
 
 
   console.log (results);
+*/
