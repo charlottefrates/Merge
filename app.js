@@ -64,6 +64,39 @@ var dataSource2 = [
     },
   ];
 
+  var results = {};
+
+  //loops through object 1
+
+  for (var i=0; i < dataSource1.length; i++) {
+        results[dataSource1[i].id] = dataSource1[i];
+  }
+
+
+  //loops to find similarities
+
+  //for...in statement
+  //===>for (variable in object) {...}
+
+  //find() method that returns value of first object element
+  //===> arr.find(callback[, thisArg])
+
+
+  for (var key in results) {
+        var addition = dataSource2.find(
+          function(item) { return item === key; });
+  }
+
+
+  //combines each dataSource
+
+
+  for (var merge in addition) {
+        results[key] = addition[key];
+  }
+
+
+    console.log (results);
 
 /*
 
@@ -84,10 +117,10 @@ function merge(dataSource1,dataSource2){
      for(var source in dataSource2){results[id] = dataSource2[id]};
 }
 
-
+/*
 #4 WORKS
 
-
+/*
 var results = {};
 
 //loops through object 1
@@ -121,7 +154,7 @@ for (var merge in addition) {
 
 
   console.log (results);
-
+/*
 #5 WORKS
 
 var objMerge;
@@ -131,11 +164,10 @@ objMerge = JSON.stringify(dataSource1) + JSON.stringify(dataSource2);
 
 console.log(objMerge);
 
-
-
-
-#6
 */
+
+
+/*
 
 var results = [];
 for (var i = 0; i < dataSource1.length; i++) {
@@ -147,3 +179,4 @@ for (var i = 0; i < dataSource1.length; i++) {
 };
 
 console.log (results);
+*/
