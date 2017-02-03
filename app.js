@@ -141,7 +141,7 @@ var results = [];
 for (var i = 0; i < dataSource1.length; i++) {
      for (var j = 0; j < dataSource2.length; i++) {
           if ( dataSource1[i]== dataSource2[j]){
-          results.push(dataSource1[i]);
+          results.push(dataSource2[i]);
      };
      };
 };
